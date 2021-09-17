@@ -6,6 +6,6 @@ shellcode = "push esp; pop eax; sub eax, 0x32323232; sub eax, 0x76766376; sub ea
 bytes = asm(shellcode)
 print(bytes)
 print(len(bytes))
-#p = gdb.debug_assembly(shellcode)
+#p = gdb.debug_assembly(shellcode) // you can set base addr by arg vma
 p = run_shellcode(bytes)
 p.interactive()
